@@ -1,12 +1,28 @@
 import styled from "styled-components"
 import TotalScore from "./TotalScore"
+import NumberSelector from "./NumberSelector"
+import RollDice from "./RollDice"
+
 
 const GamePlay = () => {
   return (
-    <main>
-       <TotalScore />
-    </main>
+    <MainContainer>
+       <div className="top_section">
+         <TotalScore />
+         <NumberSelector />
+       </div>
+       <RollDice />
+    </MainContainer>
   )
 }
 
-export default GamePlay
+export default GamePlay;
+
+const MainContainer = styled.main`
+  padding-top: 50px;
+  .top_section{
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+  }
+`;
