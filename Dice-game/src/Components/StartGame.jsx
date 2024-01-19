@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Button from "../styled/Button";
+import { Button } from "../styled/Button";
 
 const Front = ({ toggle }) => {
   return (
     <Container>
       <div>
-        <img src="/images/dice/dices.png" alt="dices image" />
+        <img src="/images/dice/dices.png" alt="dice image" />
       </div>
       <div className="content">
         <h1>DICE GAME</h1>

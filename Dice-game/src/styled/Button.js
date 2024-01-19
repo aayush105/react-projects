@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  padding: 10px 18px;
-  border-radius: 5px;
-  background: #000;
   color: white;
+  padding: 10px 18px;
+  background: #000000;
+  border-radius: 5px;
   min-width: 220px;
   border: none;
   font-size: 16px;
-  cursor: pointer;
   border: 1px solid transparent;
+  cursor: pointer;
   transition: 0.4s background ease-in;
-  &:hover{
+  &:hover {
     background-color: white;
     border: 1px solid black;
     color: black;
@@ -22,7 +22,7 @@ export const OutlineButton = styled(Button)`
   background-color: white;
   border: 1px solid black;
   color: black;
-  &:hover{
+  &:hover {
     background-color: black;
     border: 1px solid transparent;
     color: white;

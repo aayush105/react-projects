@@ -3,8 +3,8 @@ import TotalScore from "./TotalScore"
 import NumberSelector from "./NumberSelector"
 import RollDice from "./RollDice"
 import { useState } from "react"
-import Button, { OutlineButton } from "../styled/Button"
-
+import { Button,  OutlineButton } from "../styled/Button"
+import Rules from "./Rules"
 
 const GamePlay = () => {
   
@@ -12,7 +12,8 @@ const GamePlay = () => {
   const [selectedNumber, setSelectedNumber] = useState();
   const [currentDice, setCurrentDice] = useState(1);
   const [error, setError] = useState("");
-
+  const [showRules, setShowRules] = useState(false);
+  
   const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
   };
@@ -21,7 +22,7 @@ const GamePlay = () => {
       setError("You have not selected any number");
       return;
     }
-    setError("");
+
     const randomNumber = generateRandomNumber(1, 7);
     setCurrentDice((prev) => randomNumber);
 
@@ -34,7 +35,7 @@ const GamePlay = () => {
   };
 
   const resetScore = () => {
-    
+    setScore(0);
   }
 
   return (
@@ -55,9 +56,12 @@ const GamePlay = () => {
           rollDice={rollDice}
        />
        <div className="btns">
-          <Button>Reset Score</Button>
-          <OutlineButton>Show Rules</OutlineButton>
+          <OutlineButton onClick={resetScore}>Reset Score</OutlineButton>
+          <Button
+            onClick={() => setShowRules(prev => !prev)}
+          >{showRules ? "Hide" : "Show" } Rules</Button>
        </div>
+       {showRules && <Rules />}
     </MainContainer>
   )
 }
@@ -65,20 +69,18 @@ const GamePlay = () => {
 export default GamePlay;
 
 const MainContainer = styled.main`
-  padding-top: 50px;
+  padding-top: 10px;
   .top_section{
     display: flex;
     justify-content: space-around;
     align-items: end;
   }
   .btns{
-    margin-top: 40px;
+    margin-top: 10px;
     gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
   }
-
 `;

@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
-const NumberSelector = ({error, setError, selectedNumber, setSelectedNumber}) => {
-    
+const NumberSelector = ({
+    error, 
+    setError, 
+    selectedNumber, 
+    setSelectedNumber
+    }) => {
     const num = [1,2,3,4,5,6];
     const numberSelectorHandler = (value) =>{
         setSelectedNumber(value);
         setError("");
-    }
+    };
+
   return (
     <NumberSelectorContainer>
         <p className='error'>{error}</p>
@@ -55,6 +60,6 @@ const Box= styled.div`
     place-items: center;
     font-weight: 700;
     font-size: 24px;
-    background-color: ${(props)=> props.isSelected? "black" : "white"};
-    color : ${(props)=> props.isSelected? "white" : "black"};
+    background-color: ${(props)=> props.isSelected ? "black" : "white"};
+    color : ${(props)=> props.isSelected ? "white" : "black"};
 `;
