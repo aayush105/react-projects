@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Front from "./Components/Front";
+import Front from "./Components/StartGame";
 import GamePlay from "./Components/GamePlay";
 
 function App() {
@@ -23,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
