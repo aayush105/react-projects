@@ -45,6 +45,17 @@ This project utilizes React to create a straightforward contact page. Also, it u
 ### Project 3: [Dice-game](Dice-game)
 This React-based project introduces a simple and engaging dice game. Players choose a number, roll the dice, and score points if the selected number matches the rolled dice. Incorrect guesses incur a penalty of 2 points. Enjoy the thrill of chance in this entertaining game.
 
+### Project 4: [Food-Zone](Food-zone)
+
+A React-based project, Foody Zone, invites you to explore a diverse culinary experience. Utilizing a visually appealing interface, users can seamlessly search for and filter food items based on type. The project incorporates fetching data from a specified API endpoint and dynamically updates the UI with the latest information.
+
+Key Features:
+- **Dynamic Data Loading:** Fetches and displays food data from a specified API endpoint.
+- **Search Functionality:** Enables users to search for specific food items in real-time.
+- **Filtering by Type:** Offers filter buttons for categorizing food items into breakfast, lunch, dinner, or all.
+- **Styled Components:** Utilizes styled-components for a visually pleasing and responsive design.
+- **Error Handling:** Provides a user-friendly error message in case of data fetching issues.
+
 ## Output
 
 ### Project 1 Output
@@ -57,3 +68,8 @@ This React-based project introduces a simple and engaging dice game. Players cho
 ![Project 3 Output1](Dice-game/public/images/output1.png)
 ![Project 3 Output2](Dice-game/public/images/output2.png)
 ![Project 3 Output3](Dice-game/public/images/output3.png)
+
+### Project 4 Output
+![Project 4 Output1](Food-zone/app/public/output_1.png)
+![Project 4 Output2](Food-zone/app/public/output_2.png)
+

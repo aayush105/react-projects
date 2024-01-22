@@ -2,22 +2,26 @@ import { useEffect, useState } from "react";
 import styled from "styled-components"
 import SearchResult from "./components/SearchResult/SearchResult";
 
-const BASE_URL = "http://localhost:9000";
+export const BASE_URL = "http://localhost:9000";
 
 const App = () => {
 
   const [ data, setData ] = useState(null);
   const [ loading, setLoading ] = useState(false);
   const [ error, setError ] = useState(null);
+  const [ filterdData, setFilteredData] = useState(null);
+  const [ selectedButton, setSelectedButton ] = useState("all");
 
   useEffect(() => {
     const fetchFoodData = async () => {
       setLoading(true);
+
       try {
         const response = await fetch(BASE_URL);
         const jsonData = await response.json();
-        setLoading(false);
         setData(jsonData);
+        setFilteredData(jsonData);
+        setLoading(false);
   
       } catch (error) {
         setError("Unable to fetch data");
@@ -25,52 +29,92 @@ const App = () => {
     };
     fetchFoodData();
   }, []);
-  // console.log(data);
 
-  // data structure in json
+  const searchFood = (e) => {
+    const searchValue = e.target.value;
+    console.log(searchValue);
 
-  // const temp = [
-  //     {
-  //         "name": "Boilded Egg",
-  //         "price": 10,
-  //         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-  //         "image": "/images/egg.png",
-  //         "type": "breakfast"
-  //     }
-  // ]
+    if(searchValue === ""){
+      setFilteredData(null);
+    }
+
+    const filter = data?.filter((food) => food.name.toLowerCase().includes(searchValue.toLowerCase()));
+    setFilteredData(filter);
+  }
+
+  const filterFood = (type) => {
+    if(type === "all"){
+      setFilteredData(data);
+      setSelectedButton("all");
+      return;
+    }
+
+    const filter = data?.filter((food) => food.type.toLowerCase().includes(type.toLowerCase()));
+    setFilteredData(filter);
+    setSelectedButton(type);
+  };
+
+  const filterButton = [
+    {
+      name: "All",
+      type: "all",
+    },
+    {
+      name: "Breakfast",
+      type: "breakfast",
+    },
+    {
+      name: "Lunch",
+      type: "lunch",
+    },
+    {
+      name: "Dinner",
+      type: "dinner",
+    },
+  ];
 
   if(error) return <div>{error}</div>
   if(loading) return <div>loading.....</div>
 
   return (
-    <div>
+    <>
       <Container>
         <TopContainer>
-          <div className="logo"><img src="/logo.svg" alt="logo" /></div>
+          <div className="logo">
+            <img src="/logo.svg" alt="logo" />
+          </div>
           <div className="search">
-            <input type="text" placeholder="Search Food" />
+            <input onChange={searchFood} type="text" placeholder="Search Food" />
           </div>
         </TopContainer>
         <FilterContainer>
-          <Button>All</Button>
-          <Button>Breakfast</Button>
-          <Button>Lunch</Button>
-          <Button>Dinner</Button>
+          {
+            filterButton.map((value) => (
+              <Button 
+                isSelected = { selectedButton === value.type }
+                key={value.name} 
+                onClick={() => filterFood(value.type)}
+              >
+                {value.name}
+              </Button>
+            ))
+          }
         </FilterContainer>
-        <SearchResult />
       </Container>
-    </div>
+      <SearchResult data={filterdData} />
+    </>
   )
 }
 
 export default App;
- const Container = styled.div`
+
+export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
  `;
 
  const TopContainer = styled.section`
-  min-height: 140px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   padding: 16px;
@@ -85,7 +129,15 @@ export default App;
       height: 40px;
       font-size: 16px;
       padding: 0px 10px;
+      &::placeholder{
+        color: white;
+      }
     }
+  }
+
+  @media (0 < width < 600px){
+    flex-direction: column;
+    height: 120px;
   }
  `;
 
@@ -96,11 +148,16 @@ export default App;
   padding-bottom: 40px;
  `;
 
- const Button = styled.button`
+ export const Button = styled.button`
   border-radius: 5px;
-  background: #FF4343;
+  background: ${( {isSelected} ) => ( isSelected ? "#F22F2F" : "#FF4343" )};
+  outline: 1px solid ${( {isSelected} ) => ( isSelected ? "white" : "#FF4343" )};
   padding: 6px 12px;
   border: none;
   color: white;
+  cursor: pointer;
+  &:hover{
+    background-color: #F22F2F;
+  }
  `;
 
