@@ -56,6 +56,19 @@ Key Features:
 - **Styled Components:** Utilizes styled-components for a visually pleasing and responsive design.
 - **Error Handling:** Provides a user-friendly error message in case of data fetching issues.
 
+### Project 5: [Firebase-contact-app](Firebase-contact-app)
+
+The Firebase Contact App is a versatile solution for managing your contact list efficiently. Built with React, it provides a user-friendly interface for adding, editing, deleting, and searching contacts stored in a Firebase database.
+
+## Key Features
+- **Firebase Integration:** Seamlessly integrates with Firebase, enabling secure storage of contact data in the cloud.
+- **Add, Edit, Delete Contacts:** Allows users to add new contacts, edit existing ones, and delete outdated entries effortlessly.
+- **Real-time Data Synchronization:** Utilizes Firebase's real-time database capabilities to ensure instant synchronization of contact list changes across all devices.
+- **Search Functionality:** Enables quick and easy search for specific contacts by name or email, enhancing productivity.
+- **Responsive Design:** Implements responsive design principles for optimal viewing and interaction experiences across various devices and screen sizes.
+- **Error Handling:** Provides informative error messages to guide users in case of data manipulation or connectivity issues, ensuring a smooth user experience.
+
+
 ## Output
 
 ### Project 1 Output
