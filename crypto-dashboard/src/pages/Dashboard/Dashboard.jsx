@@ -1,12 +1,11 @@
-import React from 'react'
-import Sidenav from '../../Components/Sidenav'
+import DashboardLayout from "../../Components/DashboardLayout"
 
 const Dashboard = () => {
   return (
-    <div>
-      <Sidenav />
-    </div>
+    <DashboardLayout title="Dashboard">
+      <div>How are you?</div>
+    </DashboardLayout>
   )
 }
 
-export default Dashboard
+export default Dashboard;

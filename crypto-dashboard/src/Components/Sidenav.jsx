@@ -20,7 +20,18 @@ const Sidenav = () => {
 
   return (
     // this stack property === css property "display:flex" & "flex-direction:col"
-    <Stack justify="space-between" boxShadow="lg" maxW="256px" h="100vh" >
+    <Stack 
+        justify="space-between" 
+        boxShadow={{
+            base:"none",
+            lg: "lg"
+        }} 
+        w={{
+            base:"full",
+            lg:"16rem"
+        }}
+        h="100vh" 
+    >
         <Box>
             <Heading 
                 textAlign="center"
