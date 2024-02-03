@@ -92,3 +92,4 @@ The Firebase Contact App is a versatile solution for managing your contact list 
 ![Project 5 Output3](Firebase-contact-app/public/output_3.png)
 ![Project 5 Output4](Firebase-contact-app/public/output_4.png)
 ![Project 5 Output5](Firebase-contact-app/public/output_5.png)
+![Project 5 Output6](Firebase-contact-app/public/output_6.png)
