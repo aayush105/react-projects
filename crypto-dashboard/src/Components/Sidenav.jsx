@@ -21,6 +21,7 @@ const Sidenav = () => {
   return (
     // this stack property === css property "display:flex" & "flex-direction:col"
     <Stack 
+        bg="white"
         justify="space-between" 
         boxShadow={{
             base:"none",

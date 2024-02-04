@@ -1,9 +1,12 @@
 import DashboardLayout from "../../Components/DashboardLayout"
+import PortfolioSection from "./components/PortfolioSection";
 
 const Dashboard = () => {
   return (
     <DashboardLayout title="Dashboard">
-      <div>How are you?</div>
+      <div>
+        <PortfolioSection />
+      </div>
     </DashboardLayout>
   )
 }
