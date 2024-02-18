@@ -68,6 +68,17 @@ The Firebase Contact App is a versatile solution for managing your contact list 
 - **Responsive Design:** Implements responsive design principles for optimal viewing and interaction experiences across various devices and screen sizes.
 - **Error Handling:** Provides informative error messages to guide users in case of data manipulation or connectivity issues, ensuring a smooth user experience.
 
+### Project 6: [Crypto Dashboard](crypto-dashboard)
+
+Crypto Dashboard is a React-based web application designed to cater to cryptocurrency enthusiasts' needs. It offers real-time insights, portfolio management tools, and transaction capabilities.
+
+## Key Features
+- **Dashboard:** A comprehensive overview of cryptocurrency prices and portfolio performance.
+- **Support:** Access to customer support and assistance.
+- **Transaction:** Facilitation of cryptocurrency transactions with a feature-rich interface.
+
+Key packages include \`@chakra-ui/react\` for UI components, \`framer-motion\` for animations, and \`react-router-dom\` for navigation.
+
 
 ## Output
 
